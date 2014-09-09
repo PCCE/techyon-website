@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>Techyon 2.0</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<!-- Import polyfills for components that are not yet supported natively -->
+  <script src="../components/platform/platform.js"></script>
+<!-- Import required polymer components -->
+  <link rel="import" href="../components/font-roboto/roboto.html">
+  <link rel="import" href="techyon-element.html">
+  
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <style>
+    html,body {
+      height: 100%;
+      margin: 0;
+      background-color: #EEEEEE;
+      font-family: 'RobotoDraft', sans-serif;
+    }
+  </style>
+
+</head>
+
+<!-- Use the unresolved attribute to handle rendering smoothly -->
+<body fullbleed layout vertical>
+  <techyon-element></techyon-element>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/core-ajax/core-ajax.html">
+<link rel="import" href="../components/core-scroll-header-panel/core-scroll-header-panel.html">
+<link rel="import" href="../components/core-toolbar/core-toolbar.html">
+<link rel="import" href="../components/core-icon-button/core-icon-button.html">
+<link rel="import" href="../components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../components/paper-tabs/paper-tab.html">
+<link rel="import" href="../components/paper-input/paper-input.html">
+<link rel="import" href="../components/paper-shadow/paper-shadow.html">
+<link rel="import" href="../components/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../components/core-animated-pages/transitions/hero-transition.html">
+<link rel="import" href="../components/core-animated-pages/transitions/cross-fade.html">
+<link rel="import" href="../components/core-animated-pages/transitions/slide-down.html">
+<link rel="import" href="../components/core-animated-pages/transitions/slide-up.html">
+<link rel="import" href="../components/core-animated-pages/transitions/tile-cascade.html">
+
+
+<polymer-element name="techyon-element">
+  <template>
+    <style>
+    #core_scroll_header_panel {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    #main_toolbar {
+      color: #e1f5fe;
+      fill: #e1f5fe;
+      background-color: #3f51b5;
+      width: 100%;
+    }
+    section {
+      height: 100%;
+      overflow: auto;
+      width:100%;
+      background: #ffffff;
+    }
+    #main_tabs {
+      width: 100%;
+      margin: 0;
+      color: #e1f5fe;
+      background-color: #3f51b5;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      text-transform: uppercase;
+    }
+    #core_animated_pages {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: linear-gradient(#cfd8dc, #90a4ae);
+    }
+    core-card {
+      width: 95%;
+      margin: 2%;
+      padding: 2%;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 2px;
+      box-shadow: rgba(0, 0, 0, 0.0980392) 0px 4px 8px, rgba(0, 0, 0, 0.0980392) 0px 0px 6px;
+      background-color: rgb(255, 255, 255);
+    }
+    </style>
+  <core-scroll-header-panel headermargin="128" condenses keepcondensedheader headerheight="192" id="core_scroll_header_panel">
+
+    <core-toolbar id="main_toolbar" class="tall">
+
+      <paper-tabs selected="0" selectedindex="0" id="main_tabs">
+        <paper-tab id="main_tab">Home</paper-tab>
+        <paper-tab id="main_tab1">Events</paper-tab>
+        <paper-tab id="main_tab2">Register</paper-tab>
+        <paper-tab id="main_tab3">About Us</paper-tab>
+      </paper-tabs>
+
+      <div class="bottom indent">Techyon 2.0</div>
+
+    </core-toolbar>
+
+    <section content>
+      <core-animated-pages transitions="slide-up slide-down fade" selected="{{ $.main_tabs.selected }}" lastselected="0" selectedindex="0" notap id="core_animated_pages">
+        <section id="section1" layout vertical center>
+          <core-card layout vertical fade slide-up>Home Page</core-card>
+        </section>
+        <section id="section2" layout vertical center>
+          <core-card layout vertical fade slide-up>Events Page</core-card>
+        </section>
+        <section id="section3" layout vertical center>
+          <core-card layout vertical fade slide-up>Registration Page</core-card>
+        </section>
+        <section id="section4" layout vertical center>
+          <core-card layout vertical fade slide-up>About Page</core-card>
+        </section>
+      </core-animated-pages>
+    </section>
+
+  </core-scroll-header-panel>
+
+  </template>
+
+  <script>
+
+    Polymer('techyon-element', {
+      
+    });
+
+  </script>
+</polymer-element>
