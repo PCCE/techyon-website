@@ -10,24 +10,31 @@
   <script src="../components/platform/platform.js"></script>
 <!-- Import required polymer components -->
   <link rel="import" href="../components/font-roboto/roboto.html">
-  <link rel="import" href="techyon-element.html">
+  <link rel="import" href="techyon-element2.html">
   
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
     html,body {
-      height: 100%;
       margin: 0;
-      background-color: #EEEEEE;
-      font-family: 'RobotoDraft', sans-serif;
+      background-color: #f1f1f1;
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .green {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 350px;
+      background: #70c26f;
     }
   </style>
 
 </head>
 
-<!-- Use the unresolved attribute to handle rendering smoothly -->
-<body fullbleed layout vertical>
-  <techyon-element></techyon-element>
+<body>
+  <div class="green"></div>
+  <techyon-events></techyon-events>
 </body>
 
 </html>

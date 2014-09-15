@@ -30,20 +30,20 @@
     #main_toolbar {
       color: #e1f5fe;
       fill: #e1f5fe;
-      background-color: #3f51b5;
+      background-color: #9e9e9e;
       width: 100%;
     }
     section {
-      height: 100%;
+      height: 1000px;
       overflow: auto;
       width:100%;
-      background: #ffffff;
+      background: #eeeeee;
     }
     #main_tabs {
       width: 100%;
       margin: 0;
       color: #e1f5fe;
-      background-color: #3f51b5;
+      background-color: #9e9e9e;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
@@ -68,9 +68,9 @@
       background-color: rgb(255, 255, 255);
     }
     </style>
-  <core-scroll-header-panel headermargin="128" condenses keepcondensedheader headerheight="192" id="core_scroll_header_panel">
+  <core-scroll-header-panel headermargin="128" condenses keepcondensedheader headerheight="0" id="core_scroll_header_panel">
 
-    <core-toolbar id="main_toolbar" class="tall">
+    <core-toolbar id="main_toolbar">
 
       <paper-tabs selected="0" selectedindex="0" id="main_tabs">
         <paper-tab id="main_tab">Home</paper-tab>
@@ -79,7 +79,6 @@
         <paper-tab id="main_tab3">About Us</paper-tab>
       </paper-tabs>
 
-      <div class="bottom indent">Techyon 2.0</div>
 
     </core-toolbar>
 
