@@ -155,7 +155,8 @@
       }
 
       .card-event-title {
-        font-size: 2em;
+        font-size: 2.5em;
+        margin: 10px;
       }
       
       .card-event-contact {
@@ -184,41 +185,6 @@
       <core-animated-pages selected="{{ $.core_menu.selected }}" lastselected="1" selectedindex="0" notap id="core_animated_pages">
 
         <section id="Home" active>
-    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
-
-      <section id="Chips">
-        <div class="chip-container" hero-p on-tap="{{transition}}">
-          <template repeat="{{coordinators as item}}">
-            <div class="chip" hero-id="{{item.desig}}-{{item.name}}" hero?="{{selectedPerson === item }}">
-              <div class="chip-top-home" style="background: #bedead;" hero-id="{{item.desig}}-{{item.name}}-art" hero?="{{selectedPerson === item}}"></div>
-              <div class="chip-bottom">
-                <div class="chip-event-title">{{item.name}}</div>
-                <div class="chip-department">{{item.desig}}</div>
-              </div>
-            </div>
-          </template>
-        </div>
-      </section>
-
-      <section id="details">
-        <div class="card" layout horizontal hero-id="{{selectedPerson.desig}}-{{selectedPerson.name}}" hero on-tap="{{transition}}">
-          <div class="card-left" style="background: #d0d0d0;" hero-id="{{selectedPerson.desig}}-{{selectedPerson.name}}-art" hero></div>
-          <div class="card-right" flex>
-            <div layout horizontal center>
-              <div>
-                <div class="card-icon" style="background: #121233;"></div>
-              </div>
-              <div flex>
-                <div class="card-event-title">{{selectedPerson.name}}</div>
-                <div class="card-event-department">{{selectedPerson.desig}}</div>
-                <div class="card-event-contact">{{selectedPerson.contact}}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </core-animated-pages>
       </section>
 
 
@@ -269,7 +235,42 @@
       </section>
         <section id="Register">
       </section>
-        <section id="About Us">
+        <section id="Contact Us">
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section id="Chips">
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+          <template repeat="{{coordinators as item}}">
+            <div class="chip" hero-id="{{item.desig}}-{{item.name}}" hero?="{{selectedPerson === item }}">
+              <div class="chip-top-home" style="background: #bedead;" hero-id="{{item.desig}}-{{item.name}}-art" hero?="{{selectedPerson === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-event-title">{{item.name}}</div>
+                <div class="chip-department">{{item.desig}}</div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </section>
+
+      <section id="details">
+        <div class="card" layout horizontal hero-id="{{selectedPerson.desig}}-{{selectedPerson.name}}" hero on-tap="{{transition}}">
+          <div class="card-left" style="background: #d0d0d0;" hero-id="{{selectedPerson.desig}}-{{selectedPerson.name}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+              <div>
+                <div class="card-icon" style="background: #121233;"></div>
+              </div>
+              <div flex>
+                <div class="card-event-title">{{selectedPerson.name}}</div>
+                <div class="card-event-department">{{selectedPerson.desig}}</div>
+                <div class="card-event-contact">{{selectedPerson.contact}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </core-animated-pages>
       </section>
       </core-animated-pages>
     </core-scaffold>
@@ -288,24 +289,48 @@
         The contest shall consist of solving a series of challenges to reach the goal.\
         The contest will mainly deal with computer based puzzles and tasks.\
         Your knowledge of Computers, the internet and related technologies will be put to the test. ', contact: '' },
-        { department: '  E.T.C.', event: 'Line Follower', color: '#dc3c84', description: '', contact: 'Rahul  : +919604723022' },
-        { department: '  Mechanical', event: 'RoboRace', color: '#7dd6fe', description: '', contact: '' },
+        { department: '  E.T.C.', event: 'Line Follower', color: '#dc3c84', description: 'The Robotics Club in association with the Electronics and Telecommunication Department of PCCE are proud to announce the return of the Line Follower Robot Competition, with a lot more turns and twists in the tracks.\
+Students get a chance to showcase their programming skills amassed over/during the years of their engineering course.\
+Each team will go through a qualifying round and the top teams will move on to the final round where the Winner and First Runners up will be decided.\
+Register today for fun and learning experience at the Line Follower Robot Competition!!', contact: 'Rahul  : +919604723022' },
+        { department: '  Mechanical', event: 'RoboRace', color: '#7dd6fe', description: 'Simplicity is the ultimate form of sophistication.\
+		You don\’t need hydraulics and rotating crankshafts to dominate here.\
+		Respond to the ‘Call’ by a bot powered by mere strength of motors and basic mechanics.\
+		Make a simple bot, with basic functionality of movements and power drives through rough terrain.\
+		Make it simple but make it worth.', contact: '' },
         { department: '  Computer', event: 'Code Crunch', color: '#7dd6fe', description: '', contact: 'Valindo Godinho : +917798678530' },
-        { department: '  I. T.', event: 'e-Treasure Hunt', color: '#7dd6fe', description: '', contact: '' },
-        { department: '  E.T.C.', event: "Dexter's Lab", color: '#7dd6fe', description: '', contact: '' },
-        { department: '  Mechanical', event: 'Catapult', color: '#7dd6fe', description: '', contact: '' },
-        { department: '  Computer', event: 'Technical Quiz', color: '#7dd6fe', description: '', contact: 'Saeesh Burye : ' },
+        { department: '  I. T.', event: 'e-Treasure Hunt', color: '#7dd6fe', description: 'Ahoy, Me Hearties!\
+		"The golden loot "- that is what you are looking for.\
+		 Here\'s a chance to be a Pirate and loot out stuff? But remember All that glitters is not gold and your eyes may be misleading!\
+		 So, explore, at the same time, have fun. It\'s hard to keep up a secret, they say ? Can you reveal the secret of the hidden treasure??\
+		The teams will be given a clue, which when solved will lead to a series of subsequent puzzles and a new location.\
+		The clues will be hidden around the area where this technical fest is held. Teams should hunt for the clues and return with the treasure.\
+		The team which does this job first is the winner. Fair Winds!', contact: '' },
+        { department: '  E.T.C.', event: "Dexter's Lab", color: '#7dd6fe', description: 'Welcome to Dexter’s Laboratory!!\
+Here the students get a chance to showcase their Analytical, Simulation and Circuit designing skills amassed over/during the years of their engineering course.\
+Each team will go through a qualifying round and the top teams will move on to the final round where the Winner and First Runners up will be decided.\
+So all you Circuit designers come on board and register for Dexter\’s Laboratory today!!!', contact: '' },
+        { department: '  Mechanical', event: 'Catapult', color: '#7dd6fe', description: 'The goal of this competition is to encourage the students to discover more about the field of engineering by designing and building a catapult.\
+Scoring will be based on accuracy, design, adherence to cost restraints and presentation.\
+So It\'s time for you guys to put your angry bird skills into practical use.', contact: '' },
+        { department: '  Computer', event: 'Technical Quiz', color: '#7dd6fe', description: 'Tech Quiz is an event where you will be tested based on the technical knowledge you have acquired in your engineering studies.\
+		In the first round, the quiz will guide you through a series of questions which you just have to choose a correct answer for each from the give choices.\
+		The top scoring teams will get to advance to the next round which will consist of rapid fire, audio visuals and other such fun and competitive games.\
+		All the participants will be on equal terms as they will be engineering students.\
+		The questions will range from all popular fields of engineering.', contact: 'Saeesh Burye : ' },
         { department: '  I. T.', event: 'Paper Presentation', color: '#7dd6fe', description: '', contact: 'Carla­ Martins : +919226223994' },
-        { department: '  E.T.C.', event: 'Hardwired', color: '#7dd6fe', description: '', contact: '' },
+        { department: '  E.T.C.', event: 'Hardwired', color: '#7dd6fe', description: 'The ETC department is delighted to present to you HARDWIRED! \
+ HARDWIRED is an exhibition cum competition to test the creativity and technical knowledge of the participants. This is where all students that like to experiment and come up with a variety of mini projects be it using micro controllers, analogue digital or any other idea, get a chance to showcase their talents. \
+ The competition is only of one round and each team has to present their project with a demonstration and an explanation. \
+ So all you students that have an idea of a mini project that you want to exhibit and display to the others, register for Hardwired and come on over to PCCE!!', contact: '' },
         { department: '  Gaming', event: 'DoTA 2', color: '#7dd6fe', description: '', contact: 'Vivek­ : +919545061854' },
         { department: '  Gaming', event: 'Counter Strike 1.6', color: '#7dd6fe', description: '', contact: 'Adino Gonsalves :­ +919604179578' },
         { department: '  Common', event: 'Behind the Lens', color: '#7dd6fe', description: 'All those who would like your pictures seen,NOW IS THE TIME to showcase your work!!\
-            May it be a professional dslr or mobile camera ,it doesn\'t matter.\
-            We hope to see some\
-            Composition, Aesthetics, Clarity, Creativity.\
+            May it be a professional DSLR or mobile camera ,it doesn\'t matter.\
+            We hope to see some Composition, Aesthetics, Clarity, Creativity.\
             \
-            Themes: Nature, Landscapes, Still Life, Macro, HDR, Abstract (except portraits)\
-            Mail your entries to pacershutterbugs@gmail.com', contact: 'Simeon Fernandes :­ +919823578485 Krishna Devate : +917798898156' }
+            Themes: Nature, Landscapes, Still Life, Macro, HDR, Abstract (except portraits)  \
+             Mail your entries to pacershutterbugs@gmail.com', contact: 'Simeon Fernandes :­ +919823578485 , Krishna Devate : +917798898156' }
       ],
       
       coordinators: [
