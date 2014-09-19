@@ -1,32 +1,22 @@
-/***********************
-* Adobe Edge Animate Composition Actions
-*
-* Edit this file with caution, being careful to preserve 
-* function signatures and comments starting with 'Edge' to maintain the 
-* ability to interact with these actions from within Adobe Edge Animate
-*
-***********************/
-(function($, Edge, compId){
-var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonly used Edge classes
 
-   //Edge symbol: 'stage'
-   (function(symbolName) {
-      
-      
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-         // insert code here
-      });
-      //Edge binding end
+(function($,Edge,compId){var Composition=Edge.Composition,Symbol=Edge.Symbol;
+//Edge symbol: 'stage'
+(function(symbolName){Symbol.bindTriggerAction(compId,symbolName,"Default Timeline",0,function(sym,e){});
+//Edge binding end
+Symbol.bindElementAction(compId,symbolName,"${_Rectangleright}","click",function(sym,e){window.open("http://www.pcce-techyon.com/home.html","_self");});
+//Edge binding end
+Symbol.bindElementAction(compId,symbolName,"${_Starttext}","click",function(sym,e){window.open("http://www.pcce-techyon.com/home.html","_self");});
+//Edge binding end
+Symbol.bindElementAction(compId,symbolName,"${_reloadtext}","click",function(sym,e){sym.play("start");});
+//Edge binding end
+Symbol.bindElementAction(compId,symbolName,"${_Rectangleleft}","click",function(sym,e){sym.play("start");});
+//Edge binding end
+})("stage");
+//Edge symbol end:'stage'
 
-   })("stage");
-   //Edge symbol end:'stage'
+//=========================================================
 
-   //=========================================================
-   
-   //Edge symbol: 'Preloader'
-   (function(symbolName) {   
-   
-   })("Preloader");
-   //Edge symbol end:'Preloader'
-
-})(jQuery, AdobeEdge, "EDGE-707239309");
+//Edge symbol: 'Preloader'
+(function(symbolName){})("Preloader");
+//Edge symbol end:'Preloader'
+})(jQuery,AdobeEdge,"EDGE-707239309");

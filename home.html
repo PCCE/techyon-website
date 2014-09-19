@@ -1,0 +1,373 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>Techyon v2.0</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<!-- Import polyfills for components that are not yet supported natively -->
+  <script src="../components/platform/platform.js"></script>
+
+<!-- Import required polymer components -->
+  <link rel="import" href="../components/font-roboto/roboto.html">
+  <link rel="import" href="../components/core-scaffold/core-scaffold.html">
+  <link rel="import" href="../components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="../components/core-menu/core-menu.html">
+  <link rel="import" href="../components/core-item/core-item.html">
+  <link rel="import" href="../components/core-icon-button/core-icon-button.html">
+  <link rel="import" href="../components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="../components/core-menu/core-submenu.html">
+  <link rel="import" href="../components/core-animated-pages/core-animated-pages.html">
+  <link rel="import" href="../components/core-animated-pages/transitions/hero-transition.html">
+  <link rel="import" href="../components/core-animated-pages/transitions/cross-fade.html">
+  <link rel="import" href="../components/core-animated-pages/transitions/slide-down.html">
+  <link rel="import" href="../components/core-animated-pages/transitions/slide-up.html">
+  <link rel="import" href="../components/core-animated-pages/transitions/tile-cascade.html">
+
+<!--Adobe Edge Runtime--
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script type="text/javascript" charset="utf-8" src="index_edgePreload.js"></script>
+    <style>
+        .edgeLoad-EDGE-707239309 { visibility:hidden; }
+    </style>
+<!--Adobe Edge Runtime End-->
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <style>
+    html,body {
+      margin: 0;
+      background-color: #f1f1f1;
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+  </style>
+
+<polymer-element name="techyon-element">
+  <template>
+    <style>
+      :host {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #core_scaffold {
+        position: relative;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+      }
+
+      #core_header_panel {
+        background-color: rgb(255, 255, 255);
+      }
+
+      #core_toolbar {
+        color: rgb(255, 255, 255);
+        background-color: rgb(79, 125, 201);
+      }
+
+      #core_menu {
+        font-size: 16px;
+      }
+
+      #core_animated_pages {
+        width: 100%;
+        background-color: rgb(238, 238, 238);
+      }
+
+      section{
+        width: 100%;
+        height: 100%;
+      }
+
+      .chip-container {
+        position: absolute;
+        top: 100px;
+        right: 15%;
+        left: 15%;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: center;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-top-home {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-event-title {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      #details {
+        padding: 100px 1% 1%;
+      }
+
+      .card {
+        height: 400px;
+        border-radius: 3px;
+        text-align: center;
+        overflow: auto;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 1px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-event-title {
+        font-size: 2.5em;
+      }
+      
+      .card-event-contact {
+        font-size: 1.2em;
+      }
+      #core_scaffold {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+      }
+    </style>
+
+    <core-scaffold responsivewidth="2000px" mode="unseamed" id="core_scaffold">
+      <core-header-panel mode="seamed" id="core_header_panel" navigation flex>
+        <core-toolbar id="core_toolbar"></core-toolbar>
+        <core-menu selected="0" selectedindex="0" id="core_menu" theme="core-light-theme">
+          <core-item id="core_item" icon="home" label="Home" horizontal center layout active></core-item>
+          <core-item id="core_item1" icon="event" label="Events" horizontal center layout></core-item>
+          <core-item id="core_item2" icon="assignment" label="Register" horizontal center layout></core-item>
+          <core-item id="core_item3" icon="perm-identity" label="About Us" horizontal center layout></core-item>
+        </core-menu>
+      </core-header-panel>
+      <div id="div" tool>Techyon v2.0</div>
+      <core-animated-pages selected="{{ $.core_menu.selected }}" lastselected="1" selectedindex="0" notap id="core_animated_pages">
+
+        <section id="Home" active>
+      </section>
+
+
+        <section id="Events">
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section id="Chips">
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.department}}-{{item.event}}" hero?="{{selectedEvent === item }}">
+              <div class="chip-top" style="background:{{item.color}};" hero-id="{{item.department}}-{{item.event}}-art" hero?="{{selectedEvent === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-event-title">{{item.event}}</div>
+                <div class="chip-department">{{item.department}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedEvent.department}}-{{selectedEvent.event}}" hero on-tap="{{transition}}">
+          <div class="card-left" style="background:{{selectedEvent.color}};" hero-id="{{selectedEvent.department}}-{{selectedEvent.event}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+              <div>
+                <div class="card-icon" style="background:{{selectedEvent.color}};"></div>
+              </div>
+              <div flex>
+                <div class="card-event-title">{{selectedEvent.event}}</div>
+                <div class="card-event-department" style="padding: 10px; font-weight: italic;">{{selectedEvent.department}}</div>
+                <div class="card-event-contact">{{selectedEvent.contact}}</div>
+                <div class="card-event-desc" style="text-align: justify;">{{selectedEvent.description}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+      </section>
+        <section id="Register">
+      </section>
+        <section id="Contact Us">
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section id="Chips">
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+          <template repeat="{{coordinators as item}}">
+            <div class="chip" hero-id="{{item.desig}}-{{item.name}}" hero?="{{selectedPerson === item }}">
+              <div class="chip-top-home" style="background: #bedead;" hero-id="{{item.desig}}-{{item.name}}-art" hero?="{{selectedPerson === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-event-title">{{item.name}}</div>
+                <div class="chip-department">{{item.desig}}</div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </section>
+
+      <section id="details">
+        <div class="card" layout horizontal hero-id="{{selectedPerson.desig}}-{{selectedPerson.name}}" hero on-tap="{{transition}}">
+          <div class="card-left" style="background: #d0d0d0;" hero-id="{{selectedPerson.desig}}-{{selectedPerson.name}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+              <div>
+                <div class="card-icon" style="background: #121233;"></div>
+              </div>
+              <div flex>
+                <div class="card-event-title">{{selectedPerson.name}}</div>
+                <div class="card-event-department">{{selectedPerson.desig}}</div>
+                <div class="card-event-contact">{{selectedPerson.contact}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </core-animated-pages>
+      </section>
+      </core-animated-pages>
+    </core-scaffold>
+
+  </template>
+  <script>
+
+    Polymer('techyon-element', {
+
+      page: 0,
+
+      items: [
+        { department: '  Mechanical', event: 'RoboWars', color: '#f4db33', description: '', contact: 'Akshay Badami : +919158570922' },
+        { department: '  Computer', event: 'Hackathon', color: '#972ff8', description: '', contact: 'Kahlil Abreu : +917507647688' },
+        { department: '  I. T.', event: 'Decrypt', color: '#7dd6fe', description: 'Decrypt: The ultimate BrainTeaser.\
+        The contest shall consist of solving a series of challenges to reach the goal.\
+        The contest will mainly deal with computer based puzzles and tasks.\
+        Your knowledge of Computers, the internet and related technologies will be put to the test. ', contact: '' },
+        { department: '  E.T.C.', event: 'Line Follower', color: '#dc3c84', description: 'The Robotics Club in association with the Electronics and Telecommunication Department of PCCE are proud to announce the return of the Line Follower Robot Competition, with a lot more turns and twists in the tracks.\
+Students get a chance to showcase their programming skills amassed over/during the years of their engineering course.\
+Each team will go through a qualifying round and the top teams will move on to the final round where the Winner and First Runners up will be decided.\
+Register today for fun and learning experience at the Line Follower Robot Competition!!', contact: 'Rahul  : +919604723022' },
+        { department: '  Mechanical', event: 'RoboRace', color: '#7dd6fe', description: 'Simplicity is the ultimate form of sophistication.\
+		You don\’t need hydraulics and rotating crankshafts to dominate here.\
+		Respond to the ‘Call’ by a bot powered by mere strength of motors and basic mechanics.\
+		Make a simple bot, with basic functionality of movements and power drives through rough terrain.\
+		Make it simple but make it worth.', contact: '' },
+        { department: '  Computer', event: 'Code Crunch', color: '#7dd6fe', description: '', contact: 'Valindo Godinho : +917798678530' },
+        { department: '  I. T.', event: 'e-Treasure Hunt', color: '#7dd6fe', description: 'Ahoy, Me Hearties!\
+		"The golden loot "- that is what you are looking for.\
+		 Here\'s a chance to be a Pirate and loot out stuff? But remember All that glitters is not gold and your eyes may be misleading!\
+		 So, explore, at the same time, have fun. It\'s hard to keep up a secret, they say ? Can you reveal the secret of the hidden treasure??\
+		The teams will be given a clue, which when solved will lead to a series of subsequent puzzles and a new location.\
+		The clues will be hidden around the area where this technical fest is held. Teams should hunt for the clues and return with the treasure.\
+		The team which does this job first is the winner. Fair Winds!', contact: '' },
+        { department: '  E.T.C.', event: "Dexter's Lab", color: '#7dd6fe', description: 'Welcome to Dexter’s Laboratory!!\
+Here the students get a chance to showcase their Analytical, Simulation and Circuit designing skills amassed over/during the years of their engineering course.\
+Each team will go through a qualifying round and the top teams will move on to the final round where the Winner and First Runners up will be decided.\
+So all you Circuit designers come on board and register for Dexter\’s Laboratory today!!!', contact: '' },
+        { department: '  Mechanical', event: 'Catapult', color: '#7dd6fe', description: 'The goal of this competition is to encourage the students to discover more about the field of engineering by designing and building a catapult.\
+Scoring will be based on accuracy, design, adherence to cost restraints and presentation.\
+So It\'s time for you guys to put your angry bird skills into practical use.', contact: '' },
+        { department: '  Computer', event: 'Technical Quiz', color: '#7dd6fe', description: 'Tech Quiz is an event where you will be tested based on the technical knowledge you have acquired in your engineering studies.\
+		In the first round, the quiz will guide you through a series of questions which you just have to choose a correct answer for each from the give choices.\
+		The top scoring teams will get to advance to the next round which will consist of rapid fire, audio visuals and other such fun and competitive games.\
+		All the participants will be on equal terms as they will be engineering students.\
+		The questions will range from all popular fields of engineering.', contact: 'Saeesh Burye : ' },
+        { department: '  I. T.', event: 'Paper Presentation', color: '#7dd6fe', description: '', contact: 'Carla­ Martins : +919226223994' },
+        { department: '  E.T.C.', event: 'Hardwired', color: '#7dd6fe', description: 'The ETC department is delighted to present to you HARDWIRED! \
+ HARDWIRED is an exhibition cum competition to test the creativity and technical knowledge of the participants. This is where all students that like to experiment and come up with a variety of mini projects be it using micro controllers, analogue digital or any other idea, get a chance to showcase their talents. \
+ The competition is only of one round and each team has to present their project with a demonstration and an explanation. \
+ So all you students that have an idea of a mini project that you want to exhibit and display to the others, register for Hardwired and come on over to PCCE!!', contact: '' },
+        { department: '  Gaming', event: 'DoTA 2', color: '#7dd6fe', description: '', contact: 'Vivek­ : +919545061854' },
+        { department: '  Gaming', event: 'Counter Strike 1.6', color: '#7dd6fe', description: '', contact: 'Adino Gonsalves :­ +919604179578' },
+        { department: '  Common', event: 'Behind the Lens', color: '#7dd6fe', description: 'All those who would like your pictures seen,NOW IS THE TIME to showcase your work!!\
+            May it be a professional DSLR or mobile camera ,it doesn\'t matter.\
+            We hope to see some Composition, Aesthetics, Clarity, Creativity.\
+            \
+            Themes: Nature, Landscapes, Still Life, Macro, HDR, Abstract (except portraits)  \
+             Mail your entries to pacershutterbugs@gmail.com', contact: 'Simeon Fernandes :­ +919823578485 , Krishna Devate : +917798898156' }
+      ],
+      
+      coordinators: [
+        { name: 'Lakulish Raikar', contact: '96 37 912740', desig: 'Organising committee head' },
+        { name: 'Shvetang Pai Angle', contact: '97 64 657555', desig: 'Organising committee head' },
+        { name: 'Ninio Correia', contact: '99 60 030116', desig: 'Organising committee head' },
+        { name: 'Glen D\'souza', contact: '85 54 063436', desig: 'Technical head' },
+        { name: 'Naheera Almeida Coutinho', contact: '96 73 586086', desig: 'Organising committee' },
+        { name: 'Rishab Ghanti', contact: '94 03 079046', desig: 'Organising committee' },
+        { name: 'Joel Menezes Gama', contact: '90 49 708749', desig: 'Organising committee' },
+        { name: 'Sohail Mohammed', contact: '83 08 176456', desig: 'Graphic Designer' },
+        { name: 'Magnus Fernades', contact: '96 37 078086', desig: 'Website Designer' }
+      ],
+
+      selectedEvent: null,
+      
+      selectedPerson: null,
+
+      transition: function(e) {
+        if (this.page === 0 && e.target.templateInstance.model.item) {
+          this.selectedEvent = e.target.templateInstance.model.item;
+          this.selectedPerson = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+</polymer-element>
+
+</head>
+
+<body>
+<!--  <div id="Stage" class="EDGE-707239309"></div> -->
+  <techyon-element></techyon-element>
+</body>
+
+</html>
