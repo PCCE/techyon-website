@@ -3,13 +3,13 @@
 //Edge symbol: 'stage'
 (function(symbolName){Symbol.bindTriggerAction(compId,symbolName,"Default Timeline",0,function(sym,e){});
 //Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Rectangleright}","click",function(sym,e){window.open("http://www.pcce-techyon.com/home.html","_self");});
+Symbol.bindTimelineAction(compId,symbolName,"Default Timeline","play",function(sym,e){sym.$("playglow").hide();});
 //Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Starttext}","click",function(sym,e){window.open("http://www.pcce-techyon.com/home.html","_self");});
+Symbol.bindElementAction(compId,symbolName,"${_play}","click",function(sym,e){window.open("../home.html","_self");});
 //Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_reloadtext}","click",function(sym,e){sym.play("start");});
+Symbol.bindElementAction(compId,symbolName,"${_skip}","click",function(sym,e){sym.play("skip");});
 //Edge binding end
-Symbol.bindElementAction(compId,symbolName,"${_Rectangleleft}","click",function(sym,e){sym.play("start");});
+Symbol.bindElementAction(compId,symbolName,"${_reset}","click",function(sym,e){sym.play("start");});
 //Edge binding end
 })("stage");
 //Edge symbol end:'stage'
