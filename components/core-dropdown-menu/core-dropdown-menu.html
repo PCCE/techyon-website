@@ -15,10 +15,10 @@ menu. The currently selected option is displayed in the control.
 Example:
 
     <core-dropdown-menu selected="Financier" valueattr="label">
-      <core-item label="Croissant"></core-item>
-      <core-item label="Donut"></core-item>
-      <core-item label="Financier"></core-item>
-      <core-item label="Madeleine"></core-item>
+        <core-item label="Croissant"></core-item>
+        <core-item label="Donut"></core-item>
+        <core-item label="Financier"></core-item>
+        <core-item label="Madeleine"></core-item>
     </core-dropdown-menu>
 
 This example renders a drop-down menu with 4 options, with the option `Financier` pre-selected.
@@ -31,8 +31,14 @@ Style the drop-down menu with the `core-dropdown-menu::shadow #dropdown` selecto
 Example:
 
     core-dropdown-menu::shadow #dropdown {
-        background-color: #eee;
         border: 1px solid #ccc;
+        max-height: 12px;
+    }
+
+To modify the drop-down's margins, use the same selector. The default margin is 12px.
+
+    core-dropdown-menu::shadow #dropdown {
+        margin: 24px;
     }
 
 @group Polymer Core Elements
@@ -51,6 +57,15 @@ contains the selection state.
   @param {boolean} detail.isSelected true for selection and false for deselection
   @param {Object} detail.item the item element
 -->
+
+<!--
+Fired when an item element is tapped.
+
+@event core-activate
+@param {Object} detail
+  @param {Object} detail.item the item element
+-->
+
 <link href="../polymer/polymer.html" rel="import">
 <link href="../core-icon/core-icon.html" rel="import">
 <link href="../core-icons/core-icons.html" rel="import">
@@ -68,8 +83,8 @@ contains the selection state.
     <core-icon id="arrow" icon="{{opened ? 'arrow-drop-up' : 'arrow-drop-down'}}"></core-icon>
   </div>
 
-  <core-dropdown id="dropdown" relatedTarget="{{$.control}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}" margin="{{margin}}">
-    <core-menu selected="{{selected}}" valueattr="{{valueattr}}" selectedItem="{{selectedItem}}" on-core-select="{{selectAction}}">
+  <core-dropdown id="dropdown" relatedTarget="{{$.control}}" opened="{{opened}}" halign="{{halign}}" valign="{{valign}}">
+    <core-menu selected="{{selected}}" valueattr="{{valueattr}}" selectedItem="{{selectedItem}}" on-core-activate="{{activateAction}}">
       <content></content>
     </core-menu>
   </core-dropdown>
@@ -173,13 +188,11 @@ contains the selection state.
        * @type "top" | "bottom"
        * @default "bottom"
        */
-      valign: 'top',
-
-      margin: 12
+      valign: 'top'
 
     },
 
-    selectAction: function() {
+    activateAction: function() {
       this.opened = false;
     },
 
