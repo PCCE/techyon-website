@@ -2,15 +2,11 @@
 <html>
 
 <head>
-
   <title>Techyon v2.0</title>
-
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <!-- Import polyfills for components that are not yet supported natively -->
   <script src="../components/platform/platform.js"></script>
-
 <!-- Import required polymer components -->
   <link rel="import" href="../components/font-roboto/roboto.html">
   <link rel="import" href="../components/core-ajax/core-ajax.html">
@@ -28,9 +24,7 @@
   <link rel="import" href="../components/core-animated-pages/transitions/slide-up.html">
   <link rel="import" href="../components/core-animated-pages/transitions/tile-cascade.html">
   <link rel="import" href="../components/paper-button/paper-button.html">
-
   <link rel="icon" type="image/png" href="favicon.png" />
-
   <style>
     html,body {
       margin: 0;
@@ -38,7 +32,6 @@
       font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
   </style>
-
 <polymer-element name="techyon-element">
   <template>
     <style>
@@ -48,7 +41,6 @@
         height: 100%;
         box-sizing: border-box;
       }
-
       #core_scaffold {
         position: relative;
         top: 0px;
@@ -56,30 +48,24 @@
         bottom: 0px;
         left: 0px;
       }
-
       #core_header_panel {
         background-color: rgb(255, 255, 255);
       }
-
       #core_toolbar {
         color: rgb(255, 255, 255);
         background-color: rgb(79, 125, 201);
       }
-
       #core_menu {
         font-size: 16px;
       }
-
       #core_animated_pages {
         width: 100%;
         background-color: rgb(238, 238, 238);
       }
-
       section{
         width: 100%;
         height: 100%;
       }
-
       .chip-container {
         position: absolute;
         top: 100px;
@@ -87,7 +73,6 @@
         left: 10%;
         text-align: center;
       }
-
       .chip {
         display: inline-block;
         position: relative;
@@ -98,32 +83,26 @@
         background-color: #fff;
         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
       }
-
       .chip-top {
         width: 200px;
         height: 200px;
       }
-
       .chip-top-home {
         width: 200px;
         height: 200px;
         border-radius: 50%;
       }
-
       .chip-bottom {
         padding: 8px;
         line-height: 1.5;
       }
-
       .chip-event-title {
         font-weight: bold;
         text-align: center;
       }
-
       #details {
         padding: 100px 1% 1%;
       }
-
       .card {
         height: 400px;
         border-radius: 3px;
@@ -132,38 +111,30 @@
         background: #fff;
         box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
-
       .card-left {
         width: 1px;
       }
-
       .card-right {
         padding: 24px;
       }
-
       .card-icon {
         border-radius: 50%;
         width: 60px;
         height: 60px;
         margin-right: 16px;
       }
-
       .card-event-title {
         font-size: 2.5em;
       }
-      
       .card-event-contact {
         font-size: 1.3em;
       }
-
       .card-event-mail {
         font-size: 1.3em;
       }
-
       .card-event-altmail {
         font-size: 1.2em;
       }
-
       #core_scaffold {
         position: absolute;
         top: 0px;
@@ -171,22 +142,18 @@
         bottom: 0px;
         left: 0px;
       }
-
       a:link {
         text-decoration: none;
         color: #000000;
       }
-
       a:visited {
         text-decoration: none;
         color: #000000;
       }
-
       a:hover {
         text-decoration: underline;
         color: #0000ff;
       }
-
       #paper_button {
         margin: 5%;
       }
@@ -204,20 +171,13 @@
       </core-header-panel>
       <div id="div" tool>Techyon v2.0</div>
       <core-animated-pages selected="{{ $.core_menu.selected }}" lastselected="1" selectedindex="0" notap id="core_animated_pages">
-
         <section id="Home" active>
       </section>
-
-
         <section id="Events">
     <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
-
       <section id="Chips">
-
         <div class="chip-container" hero-p on-tap="{{transition}}">
-
           <template repeat="{{items as item}}">
-
             <div class="chip" hero-id="{{item.department}}-{{item.event}}" hero?="{{selectedEvent === item }}">
               <div class="chip-top" style="background:url('thumbs/{{item.thumb}}');background-size: 200px 200px;background-repeat: no-repeat;" hero-id="{{item.department}}-{{item.event}}-art" hero?="{{selectedEvent === item}}"></div>
               <div class="chip-bottom">
@@ -225,14 +185,10 @@
                 <div class="chip-department">{{item.department}}</div>
               </div>
             </div>
-
           </template>
-
         </div>
       </section>
-
       <section id="details">
-
         <div class="card" layout horizontal hero-id="{{selectedEvent.department}}-{{selectedEvent.event}}" hero on-tap="{{transition}}">
           <div class="card-left" style="background: #fff" hero-id="{{selectedEvent.department}}-{{selectedEvent.event}}-art" hero></div>
           <div class="card-right" flex>
@@ -251,14 +207,11 @@
             </div>
           </div>
         </div>
-
       </section>
-
     </core-animated-pages>
       </section>
         <section id="The Team">        
     <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
-
       <section id="Chips">
         <div class="chip-container" hero-p on-tap="{{transition}}">
           <template repeat="{{coordinators as item}}">
@@ -272,7 +225,6 @@
           </template>
         </div>
       </section>
-
       <section id="details">
         <div class="card" layout horizontal hero-id="{{selectedPerson.desig}}-{{selectedPerson.name}}" hero on-tap="{{transition}}">
           <div class="card-left" style="background: #fff;" hero-id="{{selectedPerson.desig}}-{{selectedPerson.name}}-art" hero></div>
@@ -291,7 +243,6 @@
           </div>
         </div>
       </section>
-
     </core-animated-pages>
       </section>
       <section id="About Us">
@@ -355,9 +306,9 @@ Scoring will be based on accuracy, design, adherence to cost restraints and pres
 So It\'s time for you guys to put your angry bird skills into practical use.', contact: 'Vijay­ : 9764682550 , Tyron­ : 9921479131 ', rules: 'Catapult.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
         { department: '  Computer', event: 'Technical Quiz', thumb: 'techquiz.jpg', description: 'Do you like to get brainstormed? This is where you need to be. The technical quiz will consist of questions from the most popular fields of engineering. \
         This is the place to show everyone how intellgent you really are.', contact: 'Deepam : 779­863­2225 , Mayank : 9766519761 , Nandini : 7350582664', rules: 'Quiz.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
-        { department: '  I. T.', event: 'Paper Presentation', thumb: 'present.jpg', description: 'WORDS MEAN MORE THAN WHAT IS SET DOWN ON PAPER. IT TAKES THE HUMAN VOICE TO INFUSE THEM WITH DEEPER MEANING. \
-        NEW OPINIONS ARE ALWAYS SUSPECTED, AND USUALLY OPPOSED, WITHOUT ANY OTHER REASON BUT BECAUSE THEY ARE NOT ALREADY COMMON. \
-        If you want to project your creative mind and your exploration in it, be prepared to face the so called “suspected” and “opposed” ideas here at TECHYON 2.0', contact: 'Carla : ­9226223994 , Jeethan : ­9545969367 , Mansi : ­9158202952', rules: 'Presentation.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
+        { department: '  I. T.', event: 'Paper Presentation', thumb: 'present.jpg', description: 'Evolution of Innovative Ideas. Words mean more than what is set down on paper. It takes the human voice to infuse them with deeper meaning. \
+        New opinions are always suspected, and usually opposed, without any other reason but because they are not already common. \
+        If you want to project your creative mind and your exploration in it, be prepared to face the so called “suspected” and “opposed” ideas here at Techyon 2.0', contact: 'Carla : ­9226223994 , Jeethan : ­9545969367 , Mansi : ­9158202952', rules: 'Presentation.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
         { department: '  E.T.C.', event: 'Hardwired', thumb: 'hardwired.jpg', description: 'The ETC department is delighted to present to you HARDWIRED! \
  HARDWIRED is an exhibition cum competition to test the creativity and technical knowledge of the participants. This is where all students that like to experiment and come up with a variety of mini projects be it using micro controllers, analogue digital or any other idea, get a chance to showcase their talents. \
  The competition is only of one round and each team has to present their project with a demonstration and an explanation. \
@@ -375,7 +326,7 @@ So It\'s time for you guys to put your angry bird skills into practical use.', c
       coordinators: [
         { name: 'Lakulish Raikar', contact: '96 37 912740', desig: 'Organising committee head', mail: 'lakulish@pcce-techyon.com', altmail: 'lakulishraikar@gmail.com', dp: '' },
         { name: 'Shvetang Pai Angle', contact: '97 64 657555', desig: 'Organising committee head', mail: 'angleshvetang@pcce-techyon.com', altmail: 'angleshvetang@gmail.com', dp: 'shvetang.jpg' },
-        { name: 'Ninio Correia', contact: '99 60 030116', desig: 'Organising committee head', mail: 'joenin30@gmail.com', altmail: '-', dp: '' },
+        { name: 'Ninio Correia', contact: '99 60 030116', desig: 'Organising committee head', mail: 'joenin30@gmail.com', altmail: '-', dp: 'ninio.jpg' },
         { name: 'Glen D\'souza', contact: '85 54 063436', desig: 'Technical head', mail: 'pccetechy@pcce-techyon.com', altmail: 'glendsouza2691995@hotmail.com', dp: 'glen.jpg' },
         { name: 'Adam De Souza', contact: '96 37 895077', desig: 'Organising committee', mail: 'adamdxz@gmail.com', altmail: '-', dp: 'adam.jpg' },
         { name: 'Naheera Coutinho', contact: '96 73 586086', desig: 'Organising committee', mail: 'naheera20@gmail.com', altmail: '-', dp: 'naheera.jpg' },
