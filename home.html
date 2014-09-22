@@ -263,7 +263,7 @@
         <div class="chip-container" hero-p on-tap="{{transition}}">
           <template repeat="{{coordinators as item}}">
             <div class="chip" hero-id="{{item.desig}}-{{item.name}}" hero?="{{selectedPerson === item }}">
-              <div class="chip-top-home" style="background: #bedead;" hero-id="{{item.desig}}-{{item.name}}-art" hero?="{{selectedPerson === item}}"></div>
+              <div class="chip-top-home" style="background:url('DPs/{{item.dp}}');background-size: 200px 200px;background-repeat: no-repeat;" hero-id="{{item.desig}}-{{item.name}}-art" hero?="{{selectedPerson === item}}"></div>
               <div class="chip-bottom">
                 <div class="chip-event-title">{{item.name}}</div>
                 <div class="chip-department">{{item.desig}}</div>
@@ -275,11 +275,11 @@
 
       <section id="details">
         <div class="card" layout horizontal hero-id="{{selectedPerson.desig}}-{{selectedPerson.name}}" hero on-tap="{{transition}}">
-          <div class="card-left" style="background: #d0d0d0;" hero-id="{{selectedPerson.desig}}-{{selectedPerson.name}}-art" hero></div>
+          <div class="card-left" style="background: #fff;" hero-id="{{selectedPerson.desig}}-{{selectedPerson.name}}-art" hero></div>
           <div class="card-right" flex>
             <div layout horizontal center>
               <div>
-                <div class="card-icon" style="background: #121233;"></div>
+                <div class="card-icon" style="background:url('DPs/{{selectedPerson.dp}}');background-size: 60px 60px;background-repeat: no-repeat;"></div>
               </div>
               <div flex>
                 <div class="card-event-title">{{selectedPerson.name}}</div>
@@ -303,6 +303,11 @@
           <div style="text-align: center;font-size: 1.5em;">Verna - Goa</div>
           <div style="text-align: center;font-size: 1.5em;">403722</div>
           </a>
+          <div style="margin: 5%;text-align: center;font-size: 1.5em;font-weight: bold;">Email Us:</div>
+          <a style="margin: 5%;text-align: center;font-size: 1.4em;" href="mailto:mech@pcce-techyon.com">Mechanical Dept</a>
+          <a style="margin: 5%;text-align: center;font-size: 1.4em;" href="mailto:comp@pcce-techyon.com">Computer Dept</a>
+          <a style="margin: 5%;text-align: center;font-size: 1.4em;" href="mailto:it@pcce-techyon.com">I. T. Dept</a>
+          <a style="margin: 5%;text-align: center;font-size: 1.4em;" href="mailto:etc@pcce-techyon.com">E. T. C. Dept</a>
       </section>
       </core-animated-pages>
     </core-scaffold>
@@ -315,11 +320,11 @@
       page: 0,
 
       items: [
-        { department: '  Mechanical', event: 'RoboWars', thumb: 'robowars.jpg', description: '', contact: 'Akshay : 9158570922 , Leroy :­ 8806694465', rules: 'RoboWars.doc', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
+        { department: '  Mechanical', event: 'RoboWars', thumb: 'robowars.jpg', description: 'The time is now. It’s time to bring the fight to the arena, time to bring the fight to the machines. Do you think you have what it takes to make the monster bot that beats the rest in an epic clash of metal against metal? Watch sparks fly, steel crunch and parts smash as every bot fights its way to be the best. Will you be the team to own the new King Bot..?? Join in and find out..', contact: 'Akshay : 9158570922 , Leroy :­ 8806694465', rules: 'RoboWars.doc', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
         { department: '  Computer', event: 'Hackathon', thumb: 'hackathon.png', description: 'Want to test your android app making skills? Want to know how much better you are than others? \
         You have come to the right place! Computer department of PCCE presents you the Hackathon. You need to solve a simple android app making problem to get your entry into the event. \
         And for the main event you have to build an app based on the theme we provide.', contact: 'Swapnil : 9764267981 , Shruti : 8806015905', rules: 'Hackathon.docx', register: 'http://goo.gl/wrHSg6' },
-        { department: '  I. T.', event: 'Decrypt', thumb: 'techquiz.jpg', description: 'Decrypt: The ultimate BrainTeaser.\
+        { department: '  I. T.', event: 'Decrypt', thumb: 'decrypt.jpg', description: 'Decrypt: The ultimate BrainTeaser.\
         The contest shall consist of solving a series of challenges to reach the goal.\
         The contest will mainly deal with computer based puzzles and tasks.\
         Your knowledge of Computers, the internet and related technologies will be put to the test. ', contact: 'Sanket­ : 7588925487 , Sylvester : ­9762413478 , Surbhi : ­9595908588', rules: 'Decrypt.doc', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
@@ -344,13 +349,15 @@ Register today for fun and learning experience at the Line Follower Robot Compet
         { department: '  E.T.C.', event: "Dexter's Lab", thumb: 'dexterslab.jpg', description: 'Welcome to Dexter’s Laboratory!!\
 Here the students get a chance to showcase their Analytical, Simulation and Circuit designing skills amassed over/during the years of their engineering course.\
 Each team will go through a qualifying round and the top teams will move on to the final round where the Winner and First Runners up will be decided.\
-So all you Circuit designers come on board and register for Dexter\’s Laboratory today!!!', contact: 'Allwyn : 9673908427 , Froila : 9404760148 , Lioshka : 9689731511', rules: 'DextersLab.pdf', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
+So all you Circuit designers come on board and register for Dexter\’s Laboratory today!!!', contact: 'Allwyn : 9623704296 , Froila : 7083050548 , Lioshka : 9689731511', rules: 'DextersLab.pdf', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
         { department: '  Mechanical', event: 'Catapult', thumb: 'catapult.jpg', description: 'The goal of this competition is to encourage the students to discover more about the field of engineering by designing and building a catapult.\
 Scoring will be based on accuracy, design, adherence to cost restraints and presentation.\
 So It\'s time for you guys to put your angry bird skills into practical use.', contact: 'Vijay­ : 9764682550 , Tyron­ : 9921479131 ', rules: 'Catapult.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
         { department: '  Computer', event: 'Technical Quiz', thumb: 'techquiz.jpg', description: 'Do you like to get brainstormed? This is where you need to be. The technical quiz will consist of questions from the most popular fields of engineering. \
         This is the place to show everyone how intellgent you really are.', contact: 'Deepam : 779­863­2225 , Mayank : 9766519761 , Nandini : 7350582664', rules: 'Quiz.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
-        { department: '  I. T.', event: 'Paper Presentation', thumb: 'present.jpg', description: '', contact: 'Carla : ­9226223994 , Jeethan : ­9545969367 , Mansi : ­9158202952', rules: 'Presentation.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
+        { department: '  I. T.', event: 'Paper Presentation', thumb: 'present.jpg', description: 'WORDS MEAN MORE THAN WHAT IS SET DOWN ON PAPER. IT TAKES THE HUMAN VOICE TO INFUSE THEM WITH DEEPER MEANING. \
+        NEW OPINIONS ARE ALWAYS SUSPECTED, AND USUALLY OPPOSED, WITHOUT ANY OTHER REASON BUT BECAUSE THEY ARE NOT ALREADY COMMON. \
+        If you want to project your creative mind and your exploration in it, be prepared to face the so called “suspected” and “opposed” ideas here at TECHYON 2.0', contact: 'Carla : ­9226223994 , Jeethan : ­9545969367 , Mansi : ­9158202952', rules: 'Presentation.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
         { department: '  E.T.C.', event: 'Hardwired', thumb: 'hardwired.jpg', description: 'The ETC department is delighted to present to you HARDWIRED! \
  HARDWIRED is an exhibition cum competition to test the creativity and technical knowledge of the participants. This is where all students that like to experiment and come up with a variety of mini projects be it using micro controllers, analogue digital or any other idea, get a chance to showcase their talents. \
  The competition is only of one round and each team has to present their project with a demonstration and an explanation. \
@@ -366,15 +373,17 @@ So It\'s time for you guys to put your angry bird skills into practical use.', c
       ],
       
       coordinators: [
-        { name: 'Lakulish Raikar', contact: '96 37 912740', desig: 'Organising committee head', mail: 'lakulish@pcce-techyon.com', altmail: 'lakulishraikar@gmail.com' },
-        { name: 'Shvetang Pai Angle', contact: '97 64 657555', desig: 'Organising committee head', mail: 'angleshvetang@pcce-techyon.com', altmail: 'angleshvetang@gmail.com' },
-        { name: 'Ninio Correia', contact: '99 60 030116', desig: 'Organising committee head', mail: '-', altmail: '-' },
-        { name: 'Glen D\'souza', contact: '85 54 063436', desig: 'Technical head', mail: 'pccetechy@pcce-techyon.com', altmail: 'glendsouza2691995@hotmail.com' },
-        { name: 'Naheera Almeida Coutinho', contact: '96 73 586086', desig: 'Organising committee', mail: '-', altmail: '-' },
-        { name: 'Rishab Ghanti', contact: '94 03 079046', desig: 'Organising committee', mail: '-', altmail: '-' },
-        { name: 'Joel Menezes Gama', contact: '90 49 708749', desig: 'Organising committee', mail: '-', altmail: '-' },
-        { name: 'Sohail Mohammad', contact: '83 08 176456', desig: 'Graphic Designer', mail: 'sohailm9557@gmail.com', altmail: '-' },
-        { name: 'Magnus Fernades', contact: '96 37 078086', desig: 'Website Designer', mail: 'magnusfernandes1295@hotmail.com', altmail: '-' }
+        { name: 'Lakulish Raikar', contact: '96 37 912740', desig: 'Organising committee head', mail: 'lakulish@pcce-techyon.com', altmail: 'lakulishraikar@gmail.com', dp: '' },
+        { name: 'Shvetang Pai Angle', contact: '97 64 657555', desig: 'Organising committee head', mail: 'angleshvetang@pcce-techyon.com', altmail: 'angleshvetang@gmail.com', dp: 'shvetang.jpg' },
+        { name: 'Ninio Correia', contact: '99 60 030116', desig: 'Organising committee head', mail: 'joenin30@gmail.com', altmail: '-', dp: '' },
+        { name: 'Glen D\'souza', contact: '85 54 063436', desig: 'Technical head', mail: 'pccetechy@pcce-techyon.com', altmail: 'glendsouza2691995@hotmail.com', dp: 'glen.jpg' },
+        { name: 'Adam De Souza', contact: '96 37 895077', desig: 'Organising committee', mail: 'adamdxz@gmail.com', altmail: '-', dp: 'adam.jpg' },
+        { name: 'Naheera Coutinho', contact: '96 73 586086', desig: 'Organising committee', mail: 'naheera20@gmail.com', altmail: '-', dp: 'naheera.jpg' },
+        { name: 'Rishab Ghanti', contact: '94 03 079046', desig: 'Organising committee', mail: 'rishabrghanti@gmail.com', altmail: '-', dp: '' },
+        { name: 'Joel Menezes Gama', contact: '90 49 708749', desig: 'Organising committee', mail: '-', altmail: '-', dp: '' },
+        { name: 'Sohail Mohammad', contact: '83 08 176456', desig: 'Graphic Designer', mail: 'sohailm9557@gmail.com', altmail: '-', dp: '' },
+        { name: 'Magnus Fernades', contact: '96 37 078086', desig: 'PreLoader Designer', mail: 'magnusfernandes1295@hotmail.com', altmail: '-', dp: 'magnus.jpg' },
+        { name: 'Newon Gonsalves', contact: '75 07 437370', desig: 'Form Maintainer', mail: 'newon.gonsalves@gmail.com', altmail: '-', dp: '' }
       ],
 
       selectedEvent: null,
