@@ -20,9 +20,6 @@
   <link rel="import" href="../components/core-animated-pages/core-animated-pages.html">
   <link rel="import" href="../components/core-animated-pages/transitions/hero-transition.html">
   <link rel="import" href="../components/core-animated-pages/transitions/cross-fade.html">
-  <link rel="import" href="../components/core-animated-pages/transitions/slide-down.html">
-  <link rel="import" href="../components/core-animated-pages/transitions/slide-up.html">
-  <link rel="import" href="../components/core-animated-pages/transitions/tile-cascade.html">
   <link rel="import" href="../components/paper-button/paper-button.html">
   <link rel="icon" type="image/png" href="favicon.png" />
   <style>
@@ -175,9 +172,9 @@
           <img src="images/techyon.jpg" width=100%></img>
       </section>
         <section id="Events">
-    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+    <core-animated-pages selected="{{page}}" transitions="hero-transition cross-fade" on-core-animated-pages-transition-end="{{complete}}">
       <section id="Chips">
-        <div class="chip-container" hero-p on-tap="{{transition}}">
+        <div class="chip-container" hero-p fade on-tap="{{transition}}">
           <template repeat="{{items as item}}">
             <div class="chip" hero-id="{{item.department}}-{{item.event}}" hero?="{{selectedEvent === item }}">
               <div class="chip-top" style="background:url('thumbs/{{item.thumb}}');background-size: 200px 200px;background-repeat: no-repeat;" hero-id="{{item.department}}-{{item.event}}-art" hero?="{{selectedEvent === item}}"></div>
@@ -273,7 +270,7 @@
 
       items: [
         { department: '  Mechanical', event: 'RoboWars', thumb: 'robowars.jpg', description: 'The time is now. It’s time to bring the fight to the arena, time to bring the fight to the machines. Do you think you have what it takes to make the monster bot that beats the rest in an epic clash of metal against metal? Watch sparks fly, steel crunch and parts smash as every bot fights its way to be the best. Will you be the team to own the new King Bot..?? Join in and find out..', contact: 'Akshay : 9158570922 , Leroy :­ 8806694465', rules: 'RoboWars.doc', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
-        { department: '  Computer', event: 'Hackathon', thumb: 'hackathon.png', description: 'Want to test your android app making skills? Want to know how much better you are than others? \
+        { department: '  Computer', event: 'Hackathon', thumb: 'hackathon.jpg', description: 'Want to test your android app making skills? Want to know how much better you are than others? \
         You have come to the right place! Computer department of PCCE presents you the Hackathon. You need to solve a simple android app making problem to get your entry into the event. \
         And for the main event you have to build an app based on the theme we provide.', contact: 'Swapnil : 9764267981 , Shruti : 8806015905', rules: 'Hackathon.docx', register: 'http://goo.gl/wrHSg6' },
         { department: '  I. T.', event: 'Decrypt', thumb: 'decrypt.jpg', description: 'Decrypt: The ultimate BrainTeaser.\
@@ -283,15 +280,15 @@
         { department: '  E.T.C.', event: 'Line Follower', thumb: 'lfr.jpg', description: 'The Robotics Club in association with the Electronics and Telecommunication Department of PCCE are proud to announce the return of the Line Follower Robot Competition, with a lot more turns and twists in the tracks.\
 Students get a chance to showcase their programming skills amassed over/during the years of their engineering course.\
 Each team will go through a qualifying round and the top teams will move on to the final round where the Winner and First Runners up will be decided.\
-Register today for fun and learning experience at the Line Follower Robot Competition!!', contact: 'Rahul : 9604723022 , Suhaas : 7620265072 , Jeronimo : 8806249436 ', rules: 'LFR.pdf', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
+Register today for fun and learning experience at the Line Follower Robot Competition!!', contact: 'Rahul : 9604723022 , Suhaas : 7620265072 , Jeronimo : 8806249436 ', rules: 'LFR.pdf', register: 'http://goo.gl/4RHx8L' },
         { department: '  Mechanical', event: 'RoboRace', thumb: 'roborace.jpg', description: 'Simplicity is the ultimate form of sophistication.\
 		You don\’t need hydraulics and rotating crankshafts to dominate here.\
 		Respond to the ‘Call’ by a bot powered by mere strength of motors and basic mechanics.\
 		Make a simple bot, with basic functionality of movements and power drives through rough terrain.\
 		Make it simple but make it worth.', contact: 'Siddarth­ : 9545476420 , Mesbern­ : 9604420629', rules: 'RoboRace.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
-        { department: '  Computer', event: 'Code Crunch', thumb: 'codecrunch.png', description: 'How confident are you with your programming skills? Want to find out? \
+        { department: '  Computer', event: 'Code Crunch', thumb: 'codecrunch.jpg', description: 'How confident are you with your programming skills? Want to find out? \
         Get into code crunch and climb up the ladder to claim your title. The event comprises of several stages of coding related problem solving.', contact: 'Aldrich : 9765028295 , Valindo : 7798678530', rules: 'CodeCrunch.docx', register: 'http://goo.gl/XzsJQ3' },
-        { department: '  I. T.', event: 'e-Treasure Hunt', thumb: 'treasurehunt.png', description: 'Ahoy, Me Hearties!\
+        { department: '  I. T.', event: 'e-Treasure Hunt', thumb: 'treasurehunt.jpg', description: 'Ahoy, Me Hearties!\
 		"The golden loot "- that is what you are looking for.\
 		 Here\'s a chance to be a Pirate and loot out stuff ! But remember All that glitters is not gold and your eyes may be misleading!\
 		 So, explore, at the same time, have fun. It\'s hard to keep up a secret, they say ? Can you reveal the secret of the hidden treasure??\
@@ -301,7 +298,7 @@ Register today for fun and learning experience at the Line Follower Robot Compet
         { department: '  E.T.C.', event: "Dexter's Lab", thumb: 'dexterslab.jpg', description: 'Welcome to Dexter’s Laboratory!!\
 Here the students get a chance to showcase their Analytical, Simulation and Circuit designing skills amassed over/during the years of their engineering course.\
 Each team will go through a qualifying round and the top teams will move on to the final round where the Winner and First Runners up will be decided.\
-So all you Circuit designers come on board and register for Dexter\’s Laboratory today!!!', contact: 'Allwyn : 9623704296 , Froila : 7083050548 , Lioshka : 9689731511', rules: 'DextersLab.pdf', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
+So all you Circuit designers come on board and register for Dexter\’s Laboratory today!!!', contact: 'Allwyn : 9623704296 , Froila : 7083050548 , Lioshka : 9689731511', rules: 'DextersLab.pdf', register: 'http://goo.gl/fa3PAm' },
         { department: '  Mechanical', event: 'Catapult', thumb: 'catapult.jpg', description: 'The goal of this competition is to encourage the students to discover more about the field of engineering by designing and building a catapult.\
 Scoring will be based on accuracy, design, adherence to cost restraints and presentation.\
 So It\'s time for you guys to put your angry bird skills into practical use.', contact: 'Vijay­ : 9764682550 , Tyron­ : 9921479131 ', rules: 'Catapult.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
@@ -313,9 +310,9 @@ So It\'s time for you guys to put your angry bird skills into practical use.', c
         { department: '  E.T.C.', event: 'Hardwired', thumb: 'hardwired.jpg', description: 'The ETC department is delighted to present to you HARDWIRED! \
  HARDWIRED is an exhibition cum competition to test the creativity and technical knowledge of the participants. This is where all students that like to experiment and come up with a variety of mini projects be it using micro controllers, analogue digital or any other idea, get a chance to showcase their talents. \
  The competition is only of one round and each team has to present their project with a demonstration and an explanation. \
- So all you students that have an idea of a mini project that you want to exhibit and display to the others, register for Hardwired and come on over to PCCE!!', contact: 'Austin : 9158968610 , Snigdha : 7798507272 , Vaishali : 9923961521', rules: 'Hardwired.pdf', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
+ So all you students that have an idea of a mini project that you want to exhibit and display to the others, register for Hardwired and come on over to PCCE!!', contact: 'Austin : 9158968610 , Snigdha : 7798507272 , Vaishali : 9923961521', rules: 'Hardwired.pdf', register: 'http://goo.gl/6GqTIi' },
         { department: '  Gaming', event: 'DoTA 2', thumb: 'dota2.jpg', description: '', contact: 'Dhiraj : ­8308923662 , Vivek : ­9545061854', rules: 'DoTA.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
-        { department: '  Gaming', event: 'Counter Strike 1.6', thumb: 'cs.png', description: '', contact: 'Adino­ : 9604179578 , Vijay :­ 9637890866', rules: 'CS.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
+        { department: '  Gaming', event: 'Counter Strike 1.6', thumb: 'cs.jpg', description: '', contact: 'Adino­ : 9604179578 , Vijay :­ 9637890866', rules: 'CS.docx', register: 'https://docs.google.com/forms/d/1DWPWXfWrmQMUGiqupyLZ-NSP_aCCi9-AgAZT5KYuIjM/viewform?usp=send_form' },
         { department: '  Common', event: 'Behind the Lens', thumb: 'silhouette.jpg', description: 'All those who would like your pictures seen, NOW is the time to showcase your work!!\
             May it be a professional DSLR or mobile camera, it doesn\'t matter.\
             We hope to see some Composition, Aesthetics, Clarity, Creativity.\
@@ -335,7 +332,15 @@ So It\'s time for you guys to put your angry bird skills into practical use.', c
         { name: 'Joel Menezes Gama', contact: '90 49 708749', desig: 'Organising committee', mail: '-', altmail: '-', dp: 'joel.jpg' },
         { name: 'Sohail Mohammad', contact: '83 08 176456', desig: 'Graphic Designer', mail: 'sohailm9557@gmail.com', altmail: '-', dp: 'sohail.jpg' },
         { name: 'Magnus Fernades', contact: '96 37 078086', desig: 'PreLoader Designer', mail: 'magnusfernandes1295@hotmail.com', altmail: '-', dp: 'magnus.jpg' },
-        { name: 'Newon Gonsalves', contact: '75 07 437370', desig: 'Form Maintainer', mail: 'newon.gonsalves@gmail.com', altmail: '-', dp: 'newon.jpg' }
+        { name: 'Newon Gonsalves', contact: '75 07 437370', desig: 'Form Maintainer', mail: 'newon.gonsalves@gmail.com', altmail: '-', dp: 'newon.jpg' },
+        { name: 'Omkar Samant', contact: '97 64 366609', desig: 'Mech Coordinator', mail: 'mech@pcce-techyon.com', altmail: '-', dp: '.jpg' },
+        { name: 'Soham Keni', contact: '99 22 192105', desig: 'Mech Coordinator', mail: 'mech@pcce-techyon.com', altmail: '-', dp: '.jpg' },
+        { name: 'Saeesh Burye', contact: '98 23 964907', desig: 'Comp Coordinator', mail: 'comp@pcce-techyon.com', altmail: '-', dp: '.jpg' },
+        { name: 'Akshay Joshi', contact: '96 73 731708', desig: 'Comp Coordinator', mail: 'comp@pcce-techyon.com', altmail: '-', dp: '.jpg' },
+        { name: 'Mayuri Samant', contact: '88 06 728946', desig: 'I.T. Coordinator', mail: 'it@pcce-techyon.com', altmail: '-', dp: '.jpg' },
+        { name: 'Amarnath Salgaonkar', contact: '90 49 247334', desig: 'I.T. Coordinator', mail: 'it@pcce-techyon.com', altmail: '-', dp: '.jpg' },
+        { name: 'Charlton Fernandes', contact: '89 75 963972', desig: 'E.T.C. Coordinator', mail: 'etc@pcce-techyon.com', altmail: '-', dp: '.jpg' },
+        { name: 'Charlene Sequeira', contact: '97 63 711855', desig: 'E.T.C. Coordinator', mail: 'etc@pcce-techyon.com', altmail: '-', dp: '.jpg' }
       ],
 
       selectedEvent: null,
@@ -358,8 +363,7 @@ So It\'s time for you guys to put your angry bird skills into practical use.', c
 
 </head>
 
-<body>
-<!--  <div id="Stage" class="EDGE-707239309"></div> -->
+<body unresolved>
   <techyon-element></techyon-element>
 </body>
 
